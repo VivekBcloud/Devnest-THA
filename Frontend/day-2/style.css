@@ -19,7 +19,7 @@ div {
     flex-direction: column; */
     color: black;
     padding: 2vmin;
-    width: 500px;
+    width: 60%;
     height: fit-content;
     border: 2px solid white;
 }
