@@ -14,18 +14,18 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 75vw;
-    width: 75vw;
-    border-radius: 50vw;
+    height: 45vw;
+    width: 45vw;
+    border-radius: 45vw;
     background-color: #E71D36;
-    border: 1vw solid #CDE5D7;
+    border: 0.7vw solid #CDE5D7;
 
 }
 
 .inner-circle {
-    height: 60vw;
-    width: 60vw;
-    border-radius: 50vw;
+    height: 35vw;
+    width: 35vw;
+    border-radius: 35vw;
     background-color: #FDFFFC;
     box-shadow: 0 0 2vw rgb(216, 210, 210) inset;
     border: 1vh solid white;
@@ -37,7 +37,7 @@ section {
 }
 
 .hour-hand {
-    width: 24vw;
+    width: 14vw;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -47,7 +47,7 @@ section {
 }
 
 .minute-hand {
-    width: 26vw;
+    width: 15vw;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -57,7 +57,7 @@ section {
 }
 
 .second-hand {
-    width: 27vw;
+    width: 16vw;
     position: absolute;
     top: 50%;
     left: 50%;
