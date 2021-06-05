@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+}
+
+section {
+    display: flex;
+    background-color: #2EC4B6;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75vw;
+    width: 75vw;
+    border-radius: 50vw;
+    background-color: #E71D36;
+    border: 1vw solid #CDE5D7;
+
+}
+
+.inner-circle {
+    height: 60vw;
+    width: 60vw;
+    border-radius: 50vw;
+    background-color: #FDFFFC;
+    box-shadow: 0 0 2vw rgb(216, 210, 210) inset;
+    border: 1vh solid white;
+}
+
+.hand {
+    height: 1vw;
+    transform-origin: left;
+}
+
+.hour-hand {
+    width: 24vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #240046;
+    transform: rotate(-90deg);
+    animation: tick-tock 360s linear infinite;
+}
+
+.minute-hand {
+    width: 26vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #3C096C;
+    transform: rotate(-90deg);
+    animation: tick-tock 60s linear infinite;
+}
+
+.second-hand {
+    width: 27vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #5A189A;
+    transform: rotate(-90deg);
+    animation: tick-tock 20s linear infinite;
+}
+
+@keyframes tick-tock {
+    0% {
+        transform: rotate(-90deg);
+    }
+
+    100% {
+        transform: rotate(270deg);
+    }
+}
+
+@-webkit-keyframes tick-tock {
+    0% {
+        transform: rotate(-90deg);
+    }
+
+    100% {
+        transform: rotate(270deg);
+    }
+}
+
+
+
+
+/* test */
