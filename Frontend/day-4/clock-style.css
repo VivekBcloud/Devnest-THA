@@ -1,92 +1,104 @@
 body {
-    margin: 0;
+  margin: 0;
 }
 
 section {
-    display: flex;
-    background-color: #2EC4B6;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  background-color: #2ec4b6;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
 }
 
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 45vw;
-    width: 45vw;
-    border-radius: 45vw;
-    background-color: #E71D36;
-    border: 0.7vw solid #CDE5D7;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45vw;
+  width: 45vw;
+  border-radius: 45vw;
+  background-color: #e71d36;
+  border: 0.7vw solid #cde5d7;
 }
 
 .inner-circle {
-    height: 35vw;
-    width: 35vw;
-    border-radius: 35vw;
-    background-color: #FDFFFC;
-    box-shadow: 0 0 2vw rgb(216, 210, 210) inset;
-    border: 1vh solid white;
+  height: 35vw;
+  width: 35vw;
+  border-radius: 35vw;
+  background-color: #fdfffc;
+  box-shadow: 0 0 2vw rgb(216, 210, 210) inset;
+  border: 1vh solid white;
 }
 
 .hand {
-    height: 1vw;
-    transform-origin: left;
+  transform-origin: left;
+  border-radius: 0 25px 25px 0;
+  box-shadow: 2px 0 0.5vw #5a189a;
 }
 
 .hour-hand {
-    width: 14vw;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    background-color: #240046;
-    transform: rotate(-90deg);
-    animation: tick-tock 360s linear infinite;
+  height: 1vw;
+  width: 13vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #240046;
+  transform: rotate(-90deg);
+  animation: tick-tock 360s linear infinite;
 }
 
 .minute-hand {
-    width: 15vw;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    background-color: #3C096C;
-    transform: rotate(-90deg);
-    animation: tick-tock 60s linear infinite;
+  height: 0.9vw;
+  width: 14.5vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #3c096c;
+  transform: rotate(-90deg);
+  animation: tick-tock 60s linear infinite;
 }
 
 .second-hand {
-    width: 16vw;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    background-color: #5A189A;
-    transform: rotate(-90deg);
-    animation: tick-tock 20s linear infinite;
+  height: 0.7vw;
+  width: 16vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #5a189a;
+  transform: rotate(-90deg);
+  animation: tick-tock 20s linear infinite;
 }
 
+.mid-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.5vw;
+  height: 1.5vw;
+  border-radius: 10vw;
+  background-color: #e71d36;
+  transform: translate(-50%, -50%);
+  border: 0.6vw solid #5a189a;
+  box-shadow: 0 0 0.5vw #5a189a;
+}
 @keyframes tick-tock {
-    0% {
-        transform: rotate(-90deg);
-    }
+  0% {
+    transform: rotate(-90deg);
+  }
 
-    100% {
-        transform: rotate(270deg);
-    }
+  100% {
+    transform: rotate(270deg);
+  }
 }
 
 @-webkit-keyframes tick-tock {
-    0% {
-        transform: rotate(-90deg);
-    }
+  0% {
+    transform: rotate(-90deg);
+  }
 
-    100% {
-        transform: rotate(270deg);
-    }
+  100% {
+    transform: rotate(270deg);
+  }
 }
-
-
-
 
 /* test */
