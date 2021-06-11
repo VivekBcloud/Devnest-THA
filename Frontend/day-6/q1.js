@@ -1,9 +1,9 @@
 function checkforArray(val) {
-  console.log(Array.isArray(val));
+  return Array.isArray(val);
 }
 
 a = "abc";
 b = ["a", "b", "c"];
 
-checkforArray(a);
-checkforArray(b);
+console.log(checkforArray(a));
+console.log(checkforArray(b));

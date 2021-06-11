@@ -2,7 +2,7 @@ function cloneArray(arr) {
   return arr.slice(0);
 }
 
-a = [1, 2, 3];
+a = [1, 2, [3, 4]];
 b = cloneArray(a);
 // modifying array-a
 a[1] = 20;
