@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  position: relative;
+}
+.bgtexture {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #313638;
+  height: 420px;
+  width: 420px;
+  transform: translate(-50%, -50%);
+  /* border-radius: 1rem; */
+}
+.color-grid {
+  height: auto;
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  transform: translate(-50%, -50%);
+}
+
+.pixi:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.changeColor {
+  background-color: whitesmoke !important;
+  border-color: whitesmoke !important;
+}
