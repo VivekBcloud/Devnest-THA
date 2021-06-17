@@ -9,7 +9,7 @@ function fillTheBox() {
   div.style.height = "5vh";
   div.style.width = "auto";
   div.style.backgroundColor = "#FE5F55 ";
-  div.style.border = "1px solid #D33E43";
+  div.style.border = "2px solid #D33E43";
   div.classList.add("pixi");
   return div;
 }
@@ -23,8 +23,10 @@ while (cnt) {
   colorGrid.appendChild(fillTheBox());
   cnt--;
 }
-colorGrid.addEventListener("click", (e) => {
+var pressed = false;
+colorGrid.addEventListener("mousedown", (e) => {
   //   console.log(e);
+  pressed = true;
   if (e.target.classList.contains("changeColor")) {
     e.target.classList.remove("changeColor");
     bookedSeats--;
@@ -34,5 +36,21 @@ colorGrid.addEventListener("click", (e) => {
     bookedSeats++;
     remSeats--;
   }
+  colorGrid.addEventListener("mouseup", (ev) => {
+    pressed = false;
+  });
   showChanges();
+  colorGrid.addEventListener("mouseover", (m) => {
+    if (pressed) {
+      m.target.classList.toggle("changeColor");
+      if (m.target.classList.contains("changeColor")) {
+        bookedSeats++;
+        remSeats--;
+      } else {
+        bookedSeats--;
+        remSeats++;
+      }
+      showChanges();
+    }
+  });
 });

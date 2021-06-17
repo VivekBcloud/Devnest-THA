@@ -24,14 +24,17 @@ body {
   background-color: #313638;
   height: 60vh;
   width: 60vw;
+  border-radius: 3em;
   transform: translate(-50%, -50%);
   /* border-radius: 1rem; */
 }
 .bgtexture .availSeat {
   height: 5vh;
   width: fit-content;
-  background-color: yellow;
+  background-color: inherit;
+  color: snow;
   position: absolute;
+  font-family: Geneva, Verdana, sans-serif;
   top: 10vh;
   left: 5vw;
 }
@@ -39,7 +42,9 @@ body {
 .bgtexture .bookedSeat {
   height: 5vh;
   width: fit-content;
-  background-color: yellow;
+  color: snow;
+  font-family: Geneva, Verdana, sans-serif;
+  background-color: inherit;
   position: absolute;
   top: 5vh;
   left: 5vw;
@@ -62,5 +67,5 @@ body {
 
 .changeColor {
   background-color: whitesmoke !important;
-  border-color: whitesmoke !important;
+  /* border-color: whitesmoke !important; */
 }
