@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  position: relative;
+}
+.screen {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60vw;
+  height: 10vh;
+  background-color: blueviolet;
+  border-radius: 2rem;
+}
+.bgtexture {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #313638;
+  height: 60vh;
+  width: 60vw;
+  transform: translate(-50%, -50%);
+  /* border-radius: 1rem; */
+}
+.bgtexture .availSeat {
+  height: 5vh;
+  width: fit-content;
+  background-color: yellow;
+  position: absolute;
+  top: 10vh;
+  left: 5vw;
+}
+
+.bgtexture .bookedSeat {
+  height: 5vh;
+  width: fit-content;
+  background-color: yellow;
+  position: absolute;
+  top: 5vh;
+  left: 5vw;
+}
+.color-grid {
+  height: auto;
+  width: 50vw;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  transform: translate(-50%, -50%);
+}
+
+.pixi:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.changeColor {
+  background-color: whitesmoke !important;
+  border-color: whitesmoke !important;
+}
