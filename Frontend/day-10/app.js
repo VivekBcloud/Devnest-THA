@@ -55,13 +55,19 @@ let numbers = [
   6,
   7,
   8,
+  5,
+  4,
+  4,
+  5,
 ];
-function fillTheBox(a) {
+
+function fillTheBox(a, id) {
   let cardContainer = document.createElement("div");
   let fs = document.createElement("div");
   let bs = document.createElement("div");
   bs.innerText = "" + a;
   cardContainer.classList.add("card");
+  cardContainer.setAttribute("id", "" + id);
   fs.classList.add("front-card");
   bs.classList.add("back-card");
   cardContainer.appendChild(fs);
@@ -73,35 +79,54 @@ cardBox = document.querySelector(".cards");
 
 shuffle(numbers);
 let cnt = 0;
-while (cnt < 36) {
-  cardBox.appendChild(fillTheBox(numbers[cnt]));
+while (cnt < 40) {
+  cardBox.appendChild(fillTheBox(numbers[cnt], cnt));
   cnt++;
 }
+
 let clickCount = 0;
 var first;
 var second;
 let score = 0;
+
 const flipclick = document.querySelectorAll(".card");
+
 flipclick.forEach((c) => {
   c.addEventListener("click", () => {
     c.classList.toggle("flip");
     clickCount++;
-    console.log(clickCount);
-    if (clickCount == 1) first = c;
+    console.log(c);
+    if (clickCount == 1) {
+      first = c;
+      first.style.pointerEvents = "none";
+    }
     if (clickCount == 2) {
+      cardBox.style.pointerEvents = "none";
       second = c;
-      console.log("c", c.innerText);
-      console.log("first ", first.innerText);
+      second.style.pointerEvents = "none";
+      // console.log("c", c.innerText);
+      // console.log("first ", first.innerText);
       if (first.innerText == c.innerText) {
-        first.style.display = "hidden !important";
+        setTimeout(() => {
+          first.style.visibility = "hidden";
+          c.style.visibility = "hidden";
+        }, 500);
       }
       clickCount = 0;
       setTimeout(() => {
-        let f = first;
-        let s = second;
+        let f = Object.assign(first);
+        let s = Object.assign(second);
         f.classList.toggle("flip");
         s.classList.toggle("flip");
-      }, 2000);
+        console.log("flipping", f, s);
+      }, 900);
+      setTimeout(() => {
+        let f = Object.assign(first);
+        let s = Object.assign(second);
+        s.style.pointerEvents = "all";
+        f.style.pointerEvents = "all";
+        cardBox.style.pointerEvents = "all";
+      }, 1500);
     }
   });
 });
