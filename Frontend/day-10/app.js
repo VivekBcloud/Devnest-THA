@@ -1,65 +1,19 @@
 function shuffle(array) {
   var currentIndex = array.length,
     randomIndex;
-
-  // While there remain elements to shuffle...
   while (0 !== currentIndex) {
-    // Pick a remaining element...
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
-
-    // And swap it with the current element.
     [array[currentIndex], array[randomIndex]] = [
       array[randomIndex],
       array[currentIndex],
     ];
   }
-
   return array;
 }
 
-let numbers = [
-  1,
-  2,
-  3,
-  4,
-  5,
-  6,
-  7,
-  8,
-  9,
-  9,
-  1,
-  2,
-  3,
-  4,
-  5,
-  6,
-  7,
-  8,
-  9,
-  9,
-  1,
-  2,
-  3,
-  4,
-  5,
-  6,
-  7,
-  8,
-  1,
-  2,
-  3,
-  4,
-  5,
-  6,
-  7,
-  8,
-  5,
-  4,
-  4,
-  5,
-];
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9];
+let score = 0;
 
 function fillTheBox(a, id) {
   let cardContainer = document.createElement("div");
@@ -78,55 +32,87 @@ function fillTheBox(a, id) {
 cardBox = document.querySelector(".cards");
 
 shuffle(numbers);
+
 let cnt = 0;
-while (cnt < 40) {
+
+while (cnt < 20) {
   cardBox.appendChild(fillTheBox(numbers[cnt], cnt));
   cnt++;
 }
 
-let clickCount = 0;
-var first;
-var second;
-let score = 0;
+const cards = document.querySelectorAll(".card");
+// console.log(cards);
 
-const flipclick = document.querySelectorAll(".card");
-
-flipclick.forEach((c) => {
-  c.addEventListener("click", () => {
-    c.classList.toggle("flip");
-    clickCount++;
-    console.log(c);
-    if (clickCount == 1) {
-      first = c;
-      first.style.pointerEvents = "none";
-    }
-    if (clickCount == 2) {
-      cardBox.style.pointerEvents = "none";
-      second = c;
-      second.style.pointerEvents = "none";
-      // console.log("c", c.innerText);
-      // console.log("first ", first.innerText);
-      if (first.innerText == c.innerText) {
-        setTimeout(() => {
-          first.style.visibility = "hidden";
-          c.style.visibility = "hidden";
-        }, 500);
-      }
-      clickCount = 0;
-      setTimeout(() => {
-        let f = Object.assign(first);
-        let s = Object.assign(second);
-        f.classList.toggle("flip");
-        s.classList.toggle("flip");
-        console.log("flipping", f, s);
-      }, 900);
-      setTimeout(() => {
-        let f = Object.assign(first);
-        let s = Object.assign(second);
-        s.style.pointerEvents = "all";
-        f.style.pointerEvents = "all";
-        cardBox.style.pointerEvents = "all";
-      }, 1500);
-    }
-  });
+cards.forEach((c) => {
+  c.addEventListener("click", displayCard);
 });
+
+function displayCard() {
+  console.log(this);
+  this.classList.toggle("open");
+  this.classList.toggle("show");
+  this.classList.toggle("disabled");
+  cardOpen(this);
+}
+
+var openedCards = [];
+
+function cardOpen(thiss) {
+  openedCards.push(thiss);
+  let len = openedCards.length;
+  if (len == 2) {
+    if (openedCards[0].innerText === openedCards[1].innerText) {
+      score++;
+      matched();
+    } else {
+      unmatched();
+    }
+  }
+}
+
+var matchedCard = [];
+
+function matched() {
+  openedCards[0].classList.add("match");
+  openedCards[1].classList.add("match");
+  openedCards[0].classList.remove("open");
+  openedCards[1].classList.remove("open");
+  matchedCard.push(...openedCards);
+  openedCards = [];
+  const points = document.querySelector(".score");
+  points.style.color = "red";
+  points.innerText = `Score: ${score}`;
+  if (score == 10) {
+    setTimeout(() => {
+      alert("Congrats! You have completed the challenge");
+      location.reload();
+    }, 1000);
+  }
+}
+
+function unmatched() {
+  openedCards[0].classList.add("unmatched");
+  openedCards[1].classList.add("unmatched");
+  disable();
+  setTimeout(() => {
+    openedCards[0].classList.remove("show", "open", "unmatched");
+    openedCards[1].classList.remove("show", "open", "unmatched");
+    enable();
+    openedCards = [];
+  }, 1100);
+}
+
+function disable() {
+  Array.prototype.filter.call(cards, function (card) {
+    card.classList.add("disabled");
+  });
+}
+
+function enable() {
+  Array.prototype.filter.call(cards, function (card) {
+    card.classList.remove("disabled");
+    matchedCard.forEach((c) => {
+      c.classList.add("disabled");
+    });
+  });
+}
