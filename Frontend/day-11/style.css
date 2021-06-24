@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Comfortaa", cursive;
 }
 body {
   height: 100vh;
@@ -26,6 +27,25 @@ header {
   font-size: 2em;
   font-weight: 700;
   font-family: "Comfortaa", cursive;
+}
+.score-btn,
+.next-btn {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.score-btn:hover,
+.next-btn:hover {
+  opacity: 0.6;
 }
 .questions {
   height: fit-content;
@@ -53,7 +73,29 @@ header {
 .option {
   height: 5vh;
   width: 30vw;
+  display: flex;
+  font-size: 1.1em;
+  align-items: center;
+  justify-content: center;
   border: 1px solid;
   border-radius: 25px;
   text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 1px 5px 6px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+}
+.option:hover {
+  opacity: 0.9;
+}
+.disable {
+  pointer-events: none;
+}
+.correct {
+  background: rgba(34, 255, 0, 0.5);
+}
+.wrong {
+  background: rgba(255, 0, 0, 0.5);
 }

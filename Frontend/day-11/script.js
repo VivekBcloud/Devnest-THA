@@ -1,4 +1,5 @@
 questions = document.querySelector(".questions");
+let questionNo = 0;
 const ques = [
   {
     q:
@@ -7,29 +8,93 @@ const ques = [
     op2: "Microsoft",
     op3: "Mozilla",
     op4: "Adobe",
-    ans: "op2",
+    ans: "Microsoft",
+  },
+  {
+    q: "HTML is what type of language ?",
+    op1: "Scripting Language",
+    op2: "Markup Language",
+    op3: "Programming Language",
+    op4: "Network Protocol",
+    ans: "Markup Language",
   },
 ];
-
+let score = 0;
+const scoreText = document.querySelector(".score-btn");
+const nextbtn = document.querySelector(".next-btn");
 function createOptions(q) {
   options = document.createElement("div");
   options.classList.add("options");
   let cnt = 4;
   while (cnt--) {
     option = document.createElement("div");
-    option.classList.add("option");
+    option.classList.add("option", "q" + `${q}`);
     op = cnt + 1;
-    console.log("op" + `${op}`);
+    // console.log("op" + `${op}`);
     option.innerText = ques[q]["op" + `${op}`];
     options.append(option);
   }
   return options;
 }
 function makeQuestions(q) {
+  questions.innerHTML = "";
   question = document.createElement("div");
   question.classList.add("question");
   question.innerText = ques[q].q;
   questions.append(question);
   questions.append(createOptions(q));
+  addOptionListener();
+  questionNo++;
 }
-makeQuestions(0);
+
+makeQuestions(questionNo);
+var optionClick;
+function addOptionListener() {
+  optionClick = document.querySelectorAll(".option");
+
+  optionClick.forEach((opt) => {
+    opt.addEventListener("click", checkAnswer);
+  });
+}
+
+function checkAnswer() {
+  console.log(this.classList[1]);
+  let q = this.classList[1][1];
+  if (this.innerText == ques[q].ans) {
+    this.classList.add("correct");
+    score++;
+    reveal(this, q);
+  } else {
+    this.classList.add("wrong");
+    reveal(this, q);
+  }
+}
+function reveal(e, q) {
+  console.log(e);
+  optionClick.forEach((op) => {
+    op.classList.add("disable");
+    if (op != e) {
+      if (op.innerText == ques[q].ans) {
+        op.classList.add("correct");
+      } else {
+        op.classList.add("wrong");
+      }
+    }
+  });
+  showScore();
+}
+
+// scoreText.addEventListener("click", showScore);
+
+function showScore() {
+  scoreText.innerHTML = `Score: ${score} / ${ques.length}`;
+}
+function nextQues() {
+  if (questionNo < ques.length) {
+    makeQuestions(questionNo);
+  } else {
+    nextbtn.innerHTML = "Finished";
+  }
+}
+
+nextbtn.addEventListener("click", nextQues);
