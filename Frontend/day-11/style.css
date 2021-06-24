@@ -1,5 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@465&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 2em;
+  align-items: center;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+}
+
+header {
+  margin-top: 1.2em;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 700;
+  font-family: "Comfortaa", cursive;
+}
+.questions {
+  height: fit-content;
+  width: 80vw;
+  padding: 1.2em;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.question {
+  font-size: 1.5em;
+  padding: 1.1em;
+  text-align: center;
+}
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1.4em;
+  justify-items: center;
+}
+.option {
+  height: 5vh;
+  width: 30vw;
+  border: 1px solid;
+  border-radius: 25px;
+  text-align: center;
 }
