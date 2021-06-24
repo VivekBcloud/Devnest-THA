@@ -29,7 +29,8 @@ header {
   font-family: "Comfortaa", cursive;
 }
 .score-btn,
-.next-btn {
+.next-btn,
+.restart-btn {
   height: 40px;
   display: flex;
   align-items: center;
@@ -43,9 +44,12 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.score-btn:hover,
-.next-btn:hover {
+.next-btn:hover,
+.restart-btn:hover {
   opacity: 0.6;
+}
+.restart-btn {
+  visibility: hidden;
 }
 .questions {
   height: fit-content;
@@ -86,6 +90,7 @@ header {
   -webkit-backdrop-filter: blur(1.5px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   cursor: pointer;
+  transition: all 200ms;
 }
 .option:hover {
   opacity: 0.9;

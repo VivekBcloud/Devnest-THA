@@ -18,10 +18,20 @@ const ques = [
     op4: "Network Protocol",
     ans: "Markup Language",
   },
+  {
+    q:
+      "In the JavaScript, which one of the following is not considered as an error ?",
+    op1: "Syntax error",
+    op2: "Missing of semicolons",
+    op3: "Division by zero",
+    op4: "Missing of Bracket",
+    ans: "Division by zero",
+  },
 ];
 let score = 0;
 const scoreText = document.querySelector(".score-btn");
 const nextbtn = document.querySelector(".next-btn");
+const restartbtn = document.querySelector(".restart-btn");
 function createOptions(q) {
   options = document.createElement("div");
   options.classList.add("options");
@@ -94,7 +104,11 @@ function nextQues() {
     makeQuestions(questionNo);
   } else {
     nextbtn.innerHTML = "Finished";
+    restartbtn.style.visibility = "visible";
   }
 }
 
 nextbtn.addEventListener("click", nextQues);
+restartbtn.addEventListener("click", () => {
+  location.reload();
+});
