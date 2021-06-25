@@ -9,7 +9,7 @@
 body {
   height: 100vh;
   font-family: "Comfortaa", cursive;
-
+  background-attachment: fixed;
   background-image: radial-gradient(
       circle at 82% 63%,
       rgba(183, 183, 183, 0.09) 0%,
@@ -90,7 +90,14 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.18);
   outline: none;
   font-size: 1.2em;
+  transition: 400ms all;
 }
+.input-container input:focus {
+  background: rgba(255, 255, 255, 0.507);
+
+  box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
+}
+
 .input-container button {
   height: 2.4rem;
   width: 4rem;
@@ -109,14 +116,21 @@ header {
 }
 .todoitem {
   height: auto;
-  width: 60%;
+  width: 80%;
   margin: 4px;
-  /* background-color: blueviolet; */
+  font-size: 1.2em;
+  color: white;
+  padding: 0.4em;
   float: left;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 .todolist {
   padding: 2em;
-  width: 60%;
+  width: 80%;
+  min-width: fit-content;
+  /* min-width: 400px; */
+
   height: auto;
   display: flex;
   gap: 1rem;
@@ -132,13 +146,13 @@ header {
 .itemcontainer {
   width: 100%;
   height: auto;
+  display: flex;
 }
 .delete-btn {
   margin: auto 2px;
   height: fit-content;
   padding: 0.4em;
   font-size: 1.2em;
-  width: fit-content;
   float: right;
   background: rgba(255, 0, 0, 0.3);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -149,6 +163,7 @@ header {
 }
 .complete-btn {
   height: fit-content;
+  margin: auto 2px;
   font-size: 1.2em;
   padding: 0.4em;
   width: fit-content;
