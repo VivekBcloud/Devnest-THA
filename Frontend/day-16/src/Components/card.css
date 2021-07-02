@@ -1,0 +1,15 @@
+.card {
+  height: auto;
+  padding: 1rem;
+  width: 300px;
+  border: 2px solid rgb(255, 255, 255);
+  box-shadow: 2px 1px 10px black;
+  color: antiquewhite;
+}
+
+.card img {
+  width: 100%;
+}
+.card p {
+  margin: 2px 0;
+}

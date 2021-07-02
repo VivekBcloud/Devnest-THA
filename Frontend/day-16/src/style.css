@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container .section1 {
+  min-height: 100vh;
+  background: purple;
+  display: grid;
+  place-content: center;
+}
+.container .section2 {
+  min-height: 100vh;
+  background: pink;
+  display: grid;
+  place-content: center;
+}
