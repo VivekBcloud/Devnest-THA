@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*::selection {
+  color: white;
+  background-color: crimson;
+}
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background-color: whitesmoke;
+}
+.page > h1 {
+  text-align: center;
+  padding: 1.6rem;
+}
+.container {
+  min-height: 50vh;
+  height: 50vh;
+  width: 500px;
+  /* background: purple; */
+  overflow-y: scroll;
+  border-radius: 0.2em;
+  padding: 0.5rem;
+  /* padding-bottom: 1rem; */
+  box-shadow: 2px 2px 8px black;
+}
+.card {
+  margin: 4px 30px 4px 6px;
+  height: fit-content;
+  padding: 1rem;
+  width: auto;
+  border-radius: 0.5rem;
+  box-shadow: 2px 1px 5px grey;
+  background-color: rgb(224, 127, 0);
+  line-height: 3em;
+}
+
+/* ::-webkit-scrollbar {
+  height: 100%;
+  width: 30px;
+} */
+.container::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 10px;
+  background-color: gainsboro;
+}
+.container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: orangered;
+}
