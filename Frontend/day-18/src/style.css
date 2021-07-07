@@ -29,7 +29,7 @@
   box-shadow: 2px 2px 8px black;
 }
 .card {
-  margin: 4px 30px 4px 6px;
+  margin: 4px 30px 8px 6px;
   height: fit-content;
   padding: 1rem;
   width: auto;
@@ -39,10 +39,6 @@
   line-height: 3em;
 }
 
-/* ::-webkit-scrollbar {
-  height: 100%;
-  width: 30px;
-} */
 .container::-webkit-scrollbar {
   width: 10px;
   border-radius: 10px;
@@ -51,4 +47,22 @@
 .container::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: orangered;
+}
+
+/* page 2 */
+
+.page2 {
+  min-height: 100vh;
+  background-color: violet;
+  display: grid;
+  place-content: center;
+}
+
+.page2 .board {
+  height: 200px;
+  width: 200px;
+  background-color: blueviolet;
+  border: 1rem solid black;
+  box-sizing: content-box;
+  box-shadow: 1px 1px 3px black;
 }

@@ -1,5 +1,5 @@
 import "./style.css";
-
+import Row from "./Components/Row";
 const App = () => {
   const Card = ({ food, cal }) => {
     const foodColor = cal <= 40 ? "green" : cal <= 60 ? "yellow" : "red";
@@ -20,15 +20,31 @@ const App = () => {
     { food: "Pani puri", calorie: 26 },
     { food: "French Fries", calorie: 76 },
   ];
+
   return (
-    <div className="page">
-      <h1>Calorie Read Only</h1>
-      <div className="container">
-        {foodCalorie.map((item, index) => {
-          return <Card food={item.food} cal={item.calorie} key={index} />;
-        })}
+    <>
+      <div className="page">
+        <h1>Calorie Read Only</h1>
+        <div className="container">
+          {foodCalorie.map((item, index) => {
+            return <Card food={item.food} cal={item.calorie} key={index} />;
+          })}
+        </div>
       </div>
-    </div>
+      <div className="page2">
+        <div className="board">
+          {[1, 2, 3, 4, 5, 6, 7, 8].map((item, index) => {
+            return (
+              <Row
+                odd={{
+                  odd: item % 2 == 0,
+                }}
+              />
+            );
+          })}
+        </div>
+      </div>
+    </>
   );
 };
 
