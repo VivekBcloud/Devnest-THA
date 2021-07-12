@@ -5,23 +5,14 @@ const InputBox = () => {
   const [itemName, setItemName] = useState("");
   const [calorieAmount, setCalorieAmount] = useState("");
   const [itemList, setItemList] = useState([]);
-  const item = () => {
-    return (
-      <div className="card">
-        <div className="item-name">{itemName}</div>
-        <div className="calorie-amount">{calorieAmount}</div>
-        <button>Delete</button>
-        <button>Edit</button>
-      </div>
-    );
-  };
+
   const handleAddItem = (e) => {
     e.preventDefault();
     let edit = false;
     setItemList([...itemList, { itemName, calorieAmount, edit }]);
   };
   const handleDeleteItem = (index) => {
-    const newItemList = itemList.filter((item, idx) => idx != index);
+    const newItemList = itemList.filter((item, idx) => idx !== index);
     setItemList(newItemList);
   };
   const handleEditItem = (index) => {
@@ -36,19 +27,18 @@ const InputBox = () => {
       })
     );
   };
-  const handleDone = (index) => {
+  const handleDone = (index, amount, name) => {
     setItemList(
       itemList.map((item, idx) => {
         if (idx === index) {
           item.edit = false;
-          // item.itemName =
+          item.itemName = name;
+          item.calorieAmount = amount;
         }
         return item;
       })
     );
-  };
-  const handleEditItemName = (e) => {
-    setCalorieAmount(e.target.value);
+    console.log(itemList);
   };
   return (
     <>
@@ -71,13 +61,7 @@ const InputBox = () => {
         />
         <button onClick={handleAddItem}>Add Item</button>
       </form>
-      <button
-        onClick={() => {
-          console.log(itemList);
-        }}
-      >
-        SHOW
-      </button>
+
       {itemList.map((item, index) => (
         <Cardlist
           itemName={item.itemName}
@@ -88,7 +72,6 @@ const InputBox = () => {
           key={index}
           index={index}
           doneItem={handleDone}
-          handleEditItemName={handleEditItemName}
         />
       ))}
     </>

@@ -1,5 +1,4 @@
 import Inputbox from "./Components/InputBox";
-import Cardlist from "./Components/Cardlist";
 import "./style.css";
 
 const App = () => {
