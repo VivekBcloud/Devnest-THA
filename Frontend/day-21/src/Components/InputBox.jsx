@@ -24,7 +24,9 @@ const InputBox = () => {
     const newItemList = itemList.filter((item, idx) => idx != index);
     setItemList(newItemList);
   };
-  const handleEditItem = (index) => {};
+  const handleEditItem = (index) => {
+    console.log(index);
+  };
   return (
     <>
       <form>
