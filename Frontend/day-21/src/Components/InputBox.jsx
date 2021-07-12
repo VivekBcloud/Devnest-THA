@@ -17,8 +17,8 @@ const InputBox = () => {
   };
   const handleAddItem = (e) => {
     e.preventDefault();
-    console.log(itemName, calorieAmount);
-    setItemList([...itemList, { itemName, calorieAmount }]);
+    let edit = false;
+    setItemList([...itemList, { itemName, calorieAmount, edit }]);
   };
   const handleDeleteItem = (index) => {
     const newItemList = itemList.filter((item, idx) => idx != index);
@@ -26,6 +26,29 @@ const InputBox = () => {
   };
   const handleEditItem = (index) => {
     console.log(index);
+    console.log(itemList);
+    setItemList(
+      itemList.map((item, idx) => {
+        if (idx === index) {
+          item.edit = true;
+        }
+        return item;
+      })
+    );
+  };
+  const handleDone = (index) => {
+    setItemList(
+      itemList.map((item, idx) => {
+        if (idx === index) {
+          item.edit = false;
+          // item.itemName =
+        }
+        return item;
+      })
+    );
+  };
+  const handleEditItemName = (e) => {
+    setCalorieAmount(e.target.value);
   };
   return (
     <>
@@ -59,10 +82,13 @@ const InputBox = () => {
         <Cardlist
           itemName={item.itemName}
           calorieAmount={item.calorieAmount}
+          edit={item.edit}
           deleteItem={handleDeleteItem}
           editItem={handleEditItem}
           key={index}
           index={index}
+          doneItem={handleDone}
+          handleEditItemName={handleEditItemName}
         />
       ))}
     </>
