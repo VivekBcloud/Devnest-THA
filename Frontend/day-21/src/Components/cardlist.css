@@ -5,10 +5,17 @@
 }
 .card {
   height: auto;
-  width: 130%;
-  padding: 1rem;
-  margin: 1rem;
-  background-color: red;
+  width: 40rem;
+  padding: 2rem;
+  margin: 0.4rem 0;
+  font-size: 1.2em;
+
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(105, 59, 88, 0.37);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 .item-name {
 }

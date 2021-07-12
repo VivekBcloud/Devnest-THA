@@ -43,23 +43,29 @@ const InputBox = () => {
   return (
     <>
       <form>
-        <input
-          type="text"
-          placeholder="Item name"
-          value={itemName}
-          onChange={(e) => {
-            setItemName(e.target.value);
-          }}
-        />
-        <input
-          type="number"
-          placeholder="Calorie amount"
-          value={calorieAmount}
-          onChange={(e) => {
-            setCalorieAmount(e.target.value);
-          }}
-        />
-        <button onClick={handleAddItem}>Add Item</button>
+        <div>
+          <input
+            className="inputbox"
+            type="text"
+            placeholder="Item name"
+            value={itemName}
+            onChange={(e) => {
+              setItemName(e.target.value);
+            }}
+          />
+          <input
+            className="inputbox"
+            type="number"
+            placeholder="Calorie amount"
+            value={calorieAmount}
+            onChange={(e) => {
+              setCalorieAmount(e.target.value);
+            }}
+          />
+        </div>
+        <button className="add-btn" onClick={handleAddItem}>
+          Add Item
+        </button>
       </form>
 
       {itemList.map((item, index) => (
