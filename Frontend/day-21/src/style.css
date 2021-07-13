@@ -5,7 +5,7 @@
 }
 *::selection {
   color: white;
-  background-color: crimson;
+  background-color: palevioletred;
 }
 
 .page {
@@ -33,6 +33,14 @@ body {
     )
     fixed;
   overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: #693b58;
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: palevioletred;
 }
 form {
   display: flex;
