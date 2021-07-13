@@ -5,7 +5,8 @@
 }
 .card {
   height: auto;
-  width: 40rem;
+  width: 50vw;
+  min-width: 20rem;
   padding: 1rem 2rem;
   margin: 0.4rem 0;
   font-size: 1.2em;
