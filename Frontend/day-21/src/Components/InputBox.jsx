@@ -7,9 +7,13 @@ const InputBox = () => {
   const [itemList, setItemList] = useState([]);
 
   const handleAddItem = (e) => {
-    e.preventDefault();
+    if (itemName === "" || calorieAmount === "") return;
     let edit = false;
     setItemList([...itemList, { itemName, calorieAmount, edit }]);
+    e.preventDefault();
+    setItemName("");
+    setCalorieAmount("");
+    e.target.form.reset();
   };
   const handleDeleteItem = (index) => {
     const newItemList = itemList.filter((item, idx) => idx !== index);
@@ -42,9 +46,10 @@ const InputBox = () => {
   };
   return (
     <>
-      <form>
+      <form id="addItems">
         <div>
           <input
+            required
             className="inputbox"
             type="text"
             placeholder="Item name"
@@ -54,6 +59,7 @@ const InputBox = () => {
             }}
           />
           <input
+            required
             className="inputbox"
             type="number"
             placeholder="Calorie amount"

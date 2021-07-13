@@ -16,6 +16,7 @@ const Cardlist = ({
       {edit ? (
         <input
           type="text"
+          className="input-edit-box"
           defaultValue={itemName}
           onChange={(e) => {
             setEditItemName(e.target.value);
@@ -27,6 +28,7 @@ const Cardlist = ({
       {edit ? (
         <input
           type="number"
+          className="input-edit-box"
           name="edit-Calorie-Amount"
           defaultValue={calorieAmount}
           onChange={(e) => {
@@ -36,14 +38,14 @@ const Cardlist = ({
         />
       ) : (
         <p className="calorie-amount">
-          you have consumed {calorieAmount} calorie.
+          You have consumed {calorieAmount} calories.
         </p>
       )}
-      <button className="btn" onClick={() => deleteItem(index)}>
+      <button className="btn delete" onClick={() => deleteItem(index)}>
         Delete
       </button>
       <button
-        className="btn"
+        className="btn done-edit"
         onClick={
           edit
             ? () => doneItem(index, editCalorieAmount, editItemName)
