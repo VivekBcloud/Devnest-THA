@@ -3,3 +3,20 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  display: flex;
+  justify-content: center;
+}
+h1 {
+  text-align: center;
+  margin: 0.3rem 0;
+  border-radius: 5px;
+  padding: 0.2rem 0;
+  background-color: rebeccapurple;
+}
+.templates {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0 1rem;
+  width: 90vw;
+}
