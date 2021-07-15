@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Template from "./Components/Template";
+import Templates from "./Components/Templates";
+import CreateMeme from "./Components/CreateMeme";
 import "./App.css";
 
 function App() {
   const [templates, setTemplates] = useState([]);
-  const [editMeme, setEditMeme] = useState(false);
+  const [editMeme, setEditMeme] = useState(null);
   useEffect(() => {
     const response = async () => {
       try {
@@ -20,29 +21,14 @@ function App() {
     console.log("templates", templates);
   }, []);
 
-  const editMode = (template, index) => {
-    return (
-      <div>
-        <img src="template.url" />
-      </div>
-    );
-  };
   return (
     <>
-      <h1>Meme Generator</h1>
-      <div className="templates">
-        {templates.map((template, index) => {
-          return (
-            <Template
-              template={template}
-              setEditMeme={setEditMeme}
-              editMode={editMode}
-              index={index}
-              key={index}
-            />
-          );
-        })}
-      </div>
+      <div className="heading">Meme Generator</div>
+      {editMeme === null ? (
+        <Templates templates={templates} setEditMeme={setEditMeme} />
+      ) : (
+        <CreateMeme meme={editMeme} setEditMeme={setEditMeme} />
+      )}
     </>
   );
 }
