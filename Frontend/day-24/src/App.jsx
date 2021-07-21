@@ -1,45 +1,43 @@
-import React, { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
-
+import React, { useState } from "react";
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import About from "./Components/About";
+import Profile from "./Components/Profile";
+import Dashboard from "./Components/Dashboard";
+import Home from "./Components/Home";
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
-  )
+    <Router className="App">
+      <ul className="nav">
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/About">About</Link>
+        </li>
+        <li>
+          <Link to="/Profile">Profile</Link>
+        </li>
+        <li>
+          <Link to="/Dashboard">Dashboard</Link>
+        </li>
+      </ul>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/About">
+          <About />
+        </Route>
+        <Route path="/Profile">
+          <Profile />
+        </Route>
+        <Route path="/Dashboard">
+          <Dashboard />
+        </Route>
+      </Switch>
+    </Router>
+  );
 }
 
-export default App
+export default App;
