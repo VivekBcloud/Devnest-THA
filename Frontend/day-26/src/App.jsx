@@ -1,45 +1,34 @@
-import React, { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import React from "react";
+import "./App.css";
+import { firstNameInput, lastNameInput } from "./actions/userInputAction";
+import { useDispatch, useSelector } from "react-redux";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const firstName = useSelector((state) => state.firstName);
+  const lastName = useSelector((state) => state.lastName);
+  const dispatch = useDispatch();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
-  )
+    <>
+      <div className="App">
+        <input
+          type="text"
+          onChange={(e) => {
+            dispatch(firstNameInput(e.target.value));
+          }}
+        />
+        <input
+          type="text"
+          onChange={(e) => {
+            dispatch(lastNameInput(e.target.value));
+          }}
+        />
+      </div>
+      <div className="show-names">
+        <div>{firstName}</div>
+        <div>{lastName}</div>
+      </div>
+    </>
+  );
 }
 
-export default App
+export default App;
