@@ -19,7 +19,7 @@
   border-radius: 0.4rem;
   background: rgba(218, 68, 93, 0.705);
 }
-.App .input-container .add {
+.App .input-container .btn {
   height: 2rem;
 }
 .App .todo-container {

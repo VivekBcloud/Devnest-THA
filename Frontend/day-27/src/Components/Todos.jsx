@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { addToDo } from "../actions/todoActions";
+import { addToDo, loadToDo, clearToDo } from "../actions/todoActions";
 import addbtn from "../assets/add.svg";
+import loadbtn from "../assets/load.svg";
+import clearbtn from "../assets/clear.svg";
 const Todos = () => {
   const dispatch = useDispatch();
   const [todoItem, setTodoItem] = useState("");
@@ -27,11 +29,25 @@ const Todos = () => {
       </label>
       <img
         src={addbtn}
-        className="add"
-        onClick={(e) => {
+        className="btn add"
+        onClick={() => {
           if (todoItem !== "")
             dispatch(addToDo({ title: todoItem, done: false }));
           setTodoItem("");
+        }}
+      />
+      <img
+        className="btn load"
+        src={loadbtn}
+        onClick={() => {
+          dispatch(loadToDo("https://jsonplaceholder.typicode.com/todos"));
+        }}
+      />
+      <img
+        className="btn clear"
+        src={clearbtn}
+        onClick={() => {
+          dispatch(clearToDo());
         }}
       />
     </div>
