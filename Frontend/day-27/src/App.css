@@ -14,13 +14,18 @@
   outline: none;
   border: none;
   color: bisque;
-  font-size: 1.5rem;
-  border-bottom: 2px solid black;
+  font-size: 1.4rem;
+  padding: 0.3rem 0.4rem;
+  border-bottom: 2px solid rgba(173, 0, 0, 0.815);
   border-radius: 0.4rem;
   background: rgba(218, 68, 93, 0.705);
 }
+.App .input-container label > input:focus {
+  box-shadow: 0 2px 3px rgb(236, 78, 131);
+}
 .App .input-container .btn {
   height: 2rem;
+  transition: all 100ms ease-out;
 }
 .App .todo-container {
   min-width: 50%;
@@ -32,6 +37,9 @@
   margin-top: 1rem;
 }
 
+.App .input-container .btn:hover {
+  transform: scale(1.1);
+}
 .App .todo-container .todo {
   box-sizing: border-box;
   display: flex;
