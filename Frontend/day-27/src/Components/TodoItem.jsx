@@ -1,12 +1,12 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { delToDo, completeToDo } from "../actions/todoActions";
+import cut from "../assets/close.svg";
 const TodoItem = () => {
   const todos = useSelector((state) => state);
-  console.log(todos);
   const dispatch = useDispatch();
   return (
-    <div>
+    <div className="todo-container">
       {todos.map((todo, indx) => {
         return (
           <div key={indx} className="todo">
@@ -31,13 +31,13 @@ const TodoItem = () => {
             >
               {todo.title}
             </div>
-            <button
+            <img
+              src={cut}
+              className="del-btn"
               onClick={() => {
                 dispatch(delToDo(indx));
               }}
-            >
-              -
-            </button>
+            />
           </div>
         );
       })}
