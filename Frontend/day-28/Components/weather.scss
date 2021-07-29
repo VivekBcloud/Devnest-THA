@@ -24,7 +24,7 @@
 }
 .hourly::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.438) !important;
+  background-color: rgba(255, 255, 255, 0.199) !important;
 }
 .hourly::before {
   content: "Time-Temperature";
@@ -41,8 +41,8 @@
   max-width: 70%;
   padding: 1rem 1.2rem 2rem 1.2rem;
   color: white;
-  box-shadow: rgba(251, 254, 255, 0.42) 0px 60px 111px -25px,
-    rgba(255, 249, 249, 0.08) 0px 35px 60px -35px;
+  box-shadow: rgba(58, 58, 58, 0.42) 0px 60px 111px -25px,
+    rgba(54, 54, 54, 0.08) 0px 35px 60px -35px;
   border-radius: 10px;
   border: 1px solid;
   border-color: rgb(213, 220, 226) rgb(213, 220, 226) rgb(184, 194, 204);
