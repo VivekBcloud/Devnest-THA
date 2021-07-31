@@ -16,3 +16,8 @@ export const locationWeatherReducer = (state = [], action) => {
       return state;
   }
 };
+
+export const loadingStatus = (state = false, action) => {
+  if (action.type === "LOADING_STATUS") return action.payload;
+  else return state;
+};
