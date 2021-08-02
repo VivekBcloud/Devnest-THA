@@ -6,9 +6,10 @@ import Loading from "./components/Loading";
 function App() {
   const placeData = useSelector((state) => state.placeData);
   const loading = useSelector((state) => state.loading);
+  const darkMode = useSelector((state) => state.darkModeState);
 
   return (
-    <>
+    <div className={darkMode ? "dark-mode-bg " : ""}>
       <Search />
       {loading ? (
         <Loading />
@@ -19,7 +20,7 @@ function App() {
       ) : (
         <h2> no idea what's wrong</h2>
       )}
-    </>
+    </div>
   );
 }
 

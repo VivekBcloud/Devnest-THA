@@ -21,3 +21,8 @@ export const loadingStatus = (state = false, action) => {
   if (action.type === "LOADING_STATUS") return action.payload;
   else return state;
 };
+
+export const darkModeReducer = (state = false, action) => {
+  if (action.type === "DARK_MODE") return !state;
+  else return state;
+};

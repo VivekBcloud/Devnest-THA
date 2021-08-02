@@ -36,11 +36,11 @@ const WeatherCard = () => {
             <div>{placeData.current.condition.text}</div>
           </div>
           <div className="row p-2">
-            <div style={{ fontSize: "1.2rem" }}>{placeData.location.name}</div>
+            <div style={{ fontSize: "1.5rem" }}>{placeData.location.name}</div>
             <div>{placeData.location.localtime}</div>
           </div>
-          <div className="row p-1">
-            <div style={{ fontSize: "1.2rem" }}>
+          <div className="row p-2">
+            <div style={{ fontSize: "1.1rem" }}>
               {placeData.current.feelslike_c}°C
             </div>
           </div>

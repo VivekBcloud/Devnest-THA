@@ -41,4 +41,10 @@ const changeLoading = (load) => {
     payload: load,
   };
 };
-export { findPlace, getLocationData, changeLoading };
+
+const changeDarkMode = () => {
+  return {
+    type: "DARK_MODE",
+  };
+};
+export { findPlace, getLocationData, changeLoading, changeDarkMode };
