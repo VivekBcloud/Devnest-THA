@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import "./App.css";
+import TopNavbar from "./Components/Navbar";
+import Products from "./Components/Products";
 
 function App() {
   return (
-    <div className="App">Welcome to the market where you can find nothing</div>
+    <div className="App">
+      <TopNavbar />
+      <Products />
+    </div>
   );
 }
 
