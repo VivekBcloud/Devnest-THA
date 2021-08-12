@@ -4,7 +4,7 @@
   background: linear-gradient(rgb(245, 230, 204), rgb(234, 240, 179)) fixed;
 }
 .products {
-  padding: 4rem 1rem;
+  padding: 3rem 1rem;
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(4, 1fr);
@@ -17,6 +17,13 @@
 }
 .products .product-card {
   box-shadow: 1px 1px 1px 1px rgba(107, 104, 104, 0.219);
+}
+.product-card > a:active,
+.product-card > a,
+.product-card > a:focus,
+.product-card > a:hover {
+  text-decoration: none;
+  color: black;
 }
 .products .product-card:hover {
   box-shadow: 1px 1px 5px 1px rgba(107, 104, 104, 0.589);
@@ -31,7 +38,8 @@
 .products .product-card .product-img {
   padding: 0.3rem;
   height: 200px;
-  width: auto;
+  align-self: center;
+  object-fit: contain;
 }
 .products .product-card .product-title {
   width: 20ch;
@@ -82,4 +90,37 @@
 .cart-item-container .cart-item-del:hover {
   cursor: pointer;
   transform: scale(1.1);
+}
+
+.display-item {
+  height: 90vh;
+  background: linear-gradient(rgb(245, 230, 204), rgb(234, 240, 179)) fixed;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.display-item .display-item-img {
+  height: 500px;
+}
+.display-item .display-item-texts {
+  width: 50%;
+  padding: 2rem 4rem;
+}
+.display-item .display-item-texts .display-item-title {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.display-item .display-item-texts .display-item-des {
+  font-size: 1.1rem;
+}
+.display-item .display-item-texts .display-item-price {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-size: 1.3rem;
+  margin: auto;
+  width: fit-content;
+  margin-top: 0.3rem;
+  background-color: rgb(255, 218, 143);
 }
