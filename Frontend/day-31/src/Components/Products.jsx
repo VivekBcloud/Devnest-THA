@@ -14,12 +14,12 @@ const Products = () => {
     <>
       <div className="products">
         {loading ? (
-          <h1 className="loading">LOADing</h1>
+          <h1 className="loading">Loading</h1>
         ) : (
           allProducts &&
           allProducts.length > 0 &&
-          allProducts.map((item) => {
-            return <CardComponent item={item} key={item.id} />;
+          allProducts.slice(0, 20).map((item, indx) => {
+            return <CardComponent item={item} key={indx} />;
           })
         )}
       </div>

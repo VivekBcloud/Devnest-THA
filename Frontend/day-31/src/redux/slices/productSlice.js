@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import fetchProducts from "../../Hooks/fetchProducts";
+import fetchProducts from "../../services/fetchProducts";
 
 export const fetchAllProducts = createAsyncThunk(
   "products/fetchAllProducts",
@@ -9,7 +9,7 @@ export const productSlice = createSlice({
   name: "products",
   initialState: {
     products: [],
-    loading: true,
+    // loading: true,
   },
   reducers: {},
   extraReducers: {

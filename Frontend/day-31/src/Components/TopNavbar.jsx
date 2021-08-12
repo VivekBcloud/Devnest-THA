@@ -13,8 +13,10 @@ const TopNavbar = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto"></Nav>
             <Nav>
-              <Nav.Link>Favorite</Nav.Link>
-              <Nav.Link eventKey={2}>Cart</Nav.Link>
+              <Link to="/cart">
+                cart
+                {/* <Link></Link> */}
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

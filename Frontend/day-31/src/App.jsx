@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.css";
-import TopNavbar from "./Components/Navbar";
+import TopNavbar from "./Components/TopNavbar";
 import Products from "./Components/Products";
+import CartPage from "./Components/CartPage";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
       <Router>
         <TopNavbar />
         <Switch>
-          <Route path="/" component={Products} />
+          <Route exact path="/" component={Products} />
+          <Route path="/cart" component={CartPage} />
         </Switch>
       </Router>
     </div>
