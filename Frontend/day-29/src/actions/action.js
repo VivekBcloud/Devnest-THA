@@ -9,7 +9,7 @@ const findPlace = (input) => {
 const getLocationData = (data) => {
   console.log(data);
   return (dispatch) => {
-    const url = `http://api.weatherapi.com/v1/forecast.json?key=4a81f48477fc4799a9290936212907&q=${data}`;
+    const url = `https://api.weatherapi.com/v1/forecast.json?key=4a81f48477fc4799a9290936212907&q=${data}`;
 
     fetch(url)
       .then((response) => {
