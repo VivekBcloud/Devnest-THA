@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import InputTodo from "./Components/InputTodo";
-import { ModeContext } from "./context/modecontext";
+import { ModeContext } from "./context/ModeContext";
 function App() {
   const [mode, setMode] = useState<boolean>(false);
   const theme = mode
