@@ -1,4 +1,4 @@
-const addNote = (name: String) => {
+const addNote = (name: string) => {
   return {
     type: "ADD_NOTE",
     payload: name,

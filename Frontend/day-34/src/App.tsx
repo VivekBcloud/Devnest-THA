@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div>
-      <div className="App">
+      <div className="App" style={{ fontSize: "1.5rem", marginTop: "0.7rem" }}>
         <label htmlFor="inputnote">Input</label>
         <input
           type="text"
@@ -19,6 +19,7 @@ function App() {
           onChange={(e) => {
             setInput(e.target.value);
           }}
+          style={{ fontSize: "1.5rem" }}
         />
         <button
           onClick={() => {
@@ -26,17 +27,29 @@ function App() {
             dispatch(addNote(input));
             setInput("");
           }}
+          style={{ fontSize: "1.5rem", padding: "0 1rem" }}
         >
           Add Note
         </button>
       </div>
-      <div>
-        {notes.map((item: string, idx: number) => (
-          <li key={idx}>
-            {item}
-            <button onClick={() => dispatch(delNote(idx))}>del</button>
-          </li>
-        ))}
+      <div
+        style={{ textAlign: "center", marginTop: "2rem", fontSize: "1.3rem" }}
+      >
+        {notes.length === 0 ? (
+          <h2>Input the new note </h2>
+        ) : (
+          notes.map((item: string, idx: number) => (
+            <li key={idx} style={{ fontSize: "1.4rem" }}>
+              {item}
+              <button
+                style={{ marginLeft: "0.3rem", fontSize: "1.4rem" }}
+                onClick={() => dispatch(delNote(idx))}
+              >
+                del
+              </button>
+            </li>
+          ))
+        )}
       </div>
     </div>
   );
