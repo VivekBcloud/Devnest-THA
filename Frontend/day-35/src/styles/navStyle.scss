@@ -1,0 +1,79 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  background: #fdfdfd;
+  border-bottom: solid 1px #d4d4d4;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    p {
+      font-size: 1.1rem;
+      font-family: "Assistant", sans-serif;
+      letter-spacing: 0.3ch;
+      font-weight: 700;
+      color: #1e395c;
+    }
+    svg {
+      padding: 0.4rem;
+      background: #eff4fb;
+      border-radius: 0.8rem;
+      height: 1.5rem;
+      width: 2rem;
+    }
+  }
+  .nav-menu {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-around;
+    .search-box {
+      display: flex;
+      background: #f4f6fa;
+      align-items: center;
+      padding: 0 0.8rem;
+      border-radius: 0.5rem;
+      > svg {
+        height: 1.5rem;
+        path {
+          color: #d4d4d4;
+        }
+      }
+      input {
+        outline: none;
+        border: none;
+        font-size: 1.1rem;
+        background: #f4f6fa;
+        padding: 0.5rem 0.8rem;
+        border-radius: 0.6rem;
+        ::placeholder {
+          color: #333;
+          padding: 0.6rem 0.5rem;
+        }
+      }
+    }
+    > button {
+      background: #1778f2;
+      font-size: 1.1rem;
+      color: white;
+      border-radius: 1rem;
+      padding: 0.3rem 1rem;
+      border: none;
+    }
+    .profile {
+      span {
+        display: block;
+        height: 38px;
+        width: 38px;
+        background: violet;
+        border-radius: 100%;
+      }
+    }
+  }
+}

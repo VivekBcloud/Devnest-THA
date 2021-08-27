@@ -1,0 +1,46 @@
+.side-menu-container {
+  position: relative;
+  top: 80px;
+  width: 228px;
+  border-radius: 1.4rem;
+
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .side-menu {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.11rem 2rem;
+    &:hover {
+      transition: all 0.1s;
+      background: #fcfbfc;
+      border-collapse: separate;
+      border-left: #1f79ec solid 2px;
+      .menu-option > p,
+      .menu-option > svg path {
+        color: #1f79ec !important;
+      }
+    }
+    .menu-option {
+      display: flex;
+      width: 100%;
+      gap: 1rem;
+      font-weight: 500;
+      line-height: 1rem;
+      align-items: center;
+      border-bottom: solid 1px #afb7c9;
+
+      p {
+        font-size: 0.9rem;
+        color: #4c607d;
+      }
+      svg {
+        height: 1.5rem;
+        path {
+          color: #afb7c9;
+        }
+      }
+    }
+  }
+}
