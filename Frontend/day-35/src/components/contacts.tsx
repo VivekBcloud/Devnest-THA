@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 import "../styles/contactStyle.scss";
 //type
@@ -59,7 +60,12 @@ const Contacts = () => {
     },
   ];
   return (
-    <div className="contact-container">
+    <motion.div
+      initial={{ x: 140, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 1.6, ease: [0.6, 0.05, -0.01, 0.9] }}
+      className="contact-container"
+    >
       <h3>CONTACTS</h3>
       {contactData.length === 0 ? (
         <div className="no-contact">No new contact</div>
@@ -70,7 +76,7 @@ const Contacts = () => {
           ))}
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

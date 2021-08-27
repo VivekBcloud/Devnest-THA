@@ -1,8 +1,14 @@
+import { motion } from "framer-motion";
 import React from "react";
 import "../styles/profileStyle.scss";
 const Profile = () => {
   return (
-    <div className="side-profile-container">
+    <motion.div
+      className="side-profile-container"
+      initial={{ x: -70, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
+    >
       <span
         className="profile"
         style={{
@@ -16,7 +22,7 @@ const Profile = () => {
         <div className="profile-name">Meowthalot</div>
         <div className="profile-id">@Meowthalot</div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

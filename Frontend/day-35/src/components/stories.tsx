@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 import { storyData } from "../assets/storyData";
 import "../styles/storyStyle.scss";
@@ -33,13 +34,18 @@ const Stories = () => {
   };
   const storiesData: storyDataType[] = storyData();
   return (
-    <div className="stories-container">
+    <motion.div
+      initial={{ x: 70, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
+      className="stories-container"
+    >
       {storiesData.length === 0 ? (
         <h1>No stories to show</h1>
       ) : (
         storiesData.map((story, idx) => <StoryCard story={story} key={idx} />)
       )}
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "../styles/navStyle.scss";
-import { SearchIcon } from "../assets/icons";
+import { SearchIcon, PlusIcon } from "../assets/icons";
 const Navigation = () => {
   return (
     <motion.div
@@ -27,17 +27,25 @@ const Navigation = () => {
             fill="#8381FF"
           />
         </svg>
-
-        <p>Vvk</p>
       </div>
       <div className="nav-menu">
         <div className="search-box">
           <SearchIcon />
           <input type="text" placeholder="Search" />
         </div>
-        <button>Create</button>
+        <button>
+          <PlusIcon />
+          <p>Create</p>
+        </button>
         <div className="profile">
-          <span></span>
+          <span
+            style={{
+              backgroundImage: `url('https://images.unsplash.com/photo-1513245543132-31f507417b26?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80')`,
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+            }}
+          ></span>
         </div>
       </div>
     </motion.div>

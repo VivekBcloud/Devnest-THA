@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 //style
 import "../styles/requestStyle.scss";
@@ -37,14 +38,19 @@ const Request = () => {
     );
   };
   return (
-    <div className="request-container">
+    <motion.div
+      initial={{ x: 70, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
+      className="request-container"
+    >
       <h3>REQUEST</h3>
       {reqData.length === 0 ? (
         <div className="no-req">No new friend request</div>
       ) : (
         reqData.map((req, idx) => <RequestCard req={req} key={idx} />)
       )}
-    </div>
+    </motion.div>
   );
 };
 

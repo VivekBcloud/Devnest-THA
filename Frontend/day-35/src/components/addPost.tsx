@@ -1,9 +1,15 @@
+import { motion } from "framer-motion";
 import React from "react";
 import { PostIcon } from "../assets/icons";
 import "../styles/newPostStyle.scss";
 const AddPost = () => {
   return (
-    <div className="new-post-container">
+    <motion.div
+      initial={{ x: -70, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
+      className="new-post-container"
+    >
       <div className="profile-container">
         <span
           className="profile"
@@ -20,7 +26,7 @@ const AddPost = () => {
         <PostIcon />
         <h3>Post it!</h3>
       </button>
-    </div>
+    </motion.div>
   );
 };
 
