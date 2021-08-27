@@ -1,0 +1,26 @@
+.side-profile-container {
+  display: flex;
+  width: calc(90% - 4rem);
+  border-radius: 1rem;
+  gap: 0.8rem;
+  align-items: center;
+  background: #fff;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  > .profile {
+    display: block;
+    height: 40px;
+    width: 40px;
+    border-radius: 25%;
+  }
+  > .profile-data {
+    color: #b1bcc9;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    > .profile-name {
+      color: #1f3b5e;
+    }
+  }
+}

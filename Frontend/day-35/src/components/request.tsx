@@ -38,7 +38,7 @@ const Request = () => {
   };
   return (
     <div className="request-container">
-      <h3>Request</h3>
+      <h3>REQUEST</h3>
       {reqData.length === 0 ? (
         <div className="no-req">No new friend request</div>
       ) : (

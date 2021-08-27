@@ -1,0 +1,44 @@
+.contact-container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  > h3 {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding-left: 1rem;
+    color: #bbc4ce;
+  }
+  .no-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+  }
+  .contact-list {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 1rem 0;
+    .contact-card {
+      padding: 0 1.5rem;
+      .profile {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        .profile-pic {
+          display: block;
+          height: 40px;
+          width: 40px;
+          border-radius: 25%;
+        }
+        p {
+          font-size: 0.9rem;
+
+          font-weight: 600;
+          color: #213b5c;
+        }
+      }
+    }
+  }
+}
