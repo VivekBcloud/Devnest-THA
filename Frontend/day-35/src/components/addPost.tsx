@@ -22,10 +22,17 @@ const AddPost = () => {
         ></span>
         <div className="place-holder">What's new meowth</div>
       </div>
-      <button className="post-btn">
+      <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{
+          scale: 0.9,
+          background: "#000",
+        }}
+        className="post-btn"
+      >
         <PostIcon />
         <h3>Post it!</h3>
-      </button>
+      </motion.button>
     </motion.div>
   );
 };

@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import getPostData from "../assets/postData";
 import "../styles/postsStyle.scss";
+//scroll behavior
+import { useInView } from "react-intersection-observer";
+import { useAnimation, motion } from "framer-motion";
+//icons
 import { DotIcon } from "../assets/icons";
 //types
 type postType = {
@@ -17,8 +21,38 @@ type postDataType = {
 };
 const Posts = () => {
   const PostCard = ({ post }: postType) => {
+    const animation = useAnimation();
+    const [contentRef, inView] = useInView({
+      triggerOnce: true,
+      rootMargin: "-200px",
+    });
+    useEffect(() => {
+      if (inView) {
+        animation.start("visible");
+      }
+    }, [animation, inView]);
+    const cardAnimation = {
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 0.6,
+          ease: [0.6, 0.05, -0.01, 0.9],
+        },
+      },
+      hidden: {
+        opacity: 0,
+        y: 72,
+      },
+    };
     return (
-      <div className="post-card-container">
+      <motion.div
+        ref={contentRef}
+        animate={animation}
+        initial="hidden"
+        variants={cardAnimation}
+        className="post-card-container"
+      >
         <div className="post-name">
           <div className="profile-container">
             <span
@@ -38,7 +72,7 @@ const Posts = () => {
           <p>{post.desc}</p>
         </div>
         <img src={post.img} alt={post.name} />
-      </div>
+      </motion.div>
     );
   };
 

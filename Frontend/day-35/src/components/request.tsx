@@ -2,10 +2,35 @@ import { motion } from "framer-motion";
 import React from "react";
 //style
 import "../styles/requestStyle.scss";
-
+//type
 type reqType = {
   req: string;
 };
+
+//variant
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.4,
+    },
+  },
+};
+
+const item = {
+  hidden: { x: 20, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      ease: [0.6, 0.05, -0.01, 0.9],
+    },
+  },
+};
+
 const Request = () => {
   const reqData: string[] = [
     "Me from the Future",
@@ -14,7 +39,7 @@ const Request = () => {
   ];
   const RequestCard = ({ req }: reqType) => {
     return (
-      <div className="req-card">
+      <motion.div variants={item} className="req-card">
         <div className="profile">
           <span
             className="profile-pic"
@@ -31,17 +56,36 @@ const Request = () => {
           </p>
         </div>
         <div className="btn-container">
-          <button className="accept-btn">Accept</button>
-          <button className="decline-btn">Decline</button>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{
+              scale: 0.9,
+              background: "#000",
+            }}
+            className="accept-btn"
+          >
+            Accept
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{
+              scale: 0.9,
+              background: "#333",
+              color: "#fff",
+            }}
+            className="decline-btn"
+          >
+            Decline
+          </motion.button>
         </div>
-      </div>
+      </motion.div>
     );
   };
   return (
     <motion.div
-      initial={{ x: 70, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
+      variants={container}
+      initial="hidden"
+      animate="visible"
       className="request-container"
     >
       <h3>REQUEST</h3>

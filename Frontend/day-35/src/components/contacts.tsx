@@ -8,11 +8,39 @@ type contactType = {
     img: string;
   };
 };
+//variants
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.2,
+    },
+  },
+};
 
+const item = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
 const Contacts = () => {
   const ContactCard = ({ contact }: contactType) => {
     return (
-      <div className="contact-card">
+      <motion.div
+        variants={item}
+        className="contact-card"
+        whileHover={{
+          scale: 1.05,
+        }}
+        whileTap={{
+          scale: 1,
+        }}
+      >
         <div className="profile">
           <span
             className="profile-pic"
@@ -25,7 +53,7 @@ const Contacts = () => {
           ></span>
           <p>{contact.name}</p>
         </div>
-      </div>
+      </motion.div>
     );
   };
 
@@ -61,9 +89,9 @@ const Contacts = () => {
   ];
   return (
     <motion.div
-      initial={{ x: 140, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{ duration: 1.6, ease: [0.6, 0.05, -0.01, 0.9] }}
+      variants={container}
+      initial="hidden"
+      animate="visible"
       className="contact-container"
     >
       <h3>CONTACTS</h3>
