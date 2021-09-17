@@ -1,0 +1,13 @@
+{
+  "name": "day-8",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "lzi",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
