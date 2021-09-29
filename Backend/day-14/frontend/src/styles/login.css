@@ -1,0 +1,54 @@
+.login-container {
+  height: 100vh;
+  display: grid;
+  align-items: center;
+}
+
+.input-box {
+  max-width: 60%;
+  width: 40%;
+  height: 70%;
+  padding: 0 1rem;
+  background: #7f00d3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+  border-radius: 2rem;
+  align-items: center;
+}
+.info-box {
+  position: relative;
+}
+
+.info-box input {
+  width: 100%;
+  color: #fff;
+  font-size: 1.1em;
+  border: none;
+  padding: 0.2rem;
+  border-bottom: 1px solid whitesmoke;
+  outline: none;
+  background: transparent;
+}
+.info-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.info-box input:focus ~ label,
+.info-box input:valid ~ label {
+  top: -1.7rem;
+  left: 0;
+  color: #e4b6ff;
+  font-size: 1em;
+}
+.login-container .input-box > button {
+  padding: 0.5rem 2rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+}
