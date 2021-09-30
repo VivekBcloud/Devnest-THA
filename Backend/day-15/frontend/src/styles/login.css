@@ -3,13 +3,10 @@
   display: grid;
   align-items: center;
 }
-.login-container > form {
-  transform-origin: center;
-  /* width: 90%; */
-}
+
 .input-box {
   max-width: 60%;
-  width: 50%;
+  width: 40%;
   height: 70%;
   padding: 0 1rem;
   background: #7f00d3;
@@ -22,7 +19,6 @@
 }
 .info-box {
   position: relative;
-  width: 60%;
 }
 
 .info-box input {

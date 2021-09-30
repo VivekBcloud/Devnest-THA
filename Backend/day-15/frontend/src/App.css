@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+.App {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.option-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  gap: 1rem;
+}
+.option-bar > div div {
+  font-size: 1.2rem;
+  color: aliceblue;
+}
+.form-field {
+  flex-grow: 2;
+}
+.option-container {
+  position: relative;
+  width: 80px;
+  height: 140px;
+  border: 7px solid #ba61f5;
+  box-sizing: border-box;
+  border-radius: 48px;
+}
+.option-selector {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background: #9900ff;
+}

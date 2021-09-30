@@ -1,0 +1,27 @@
+.modal-container {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  right: 20%;
+  bottom: 10%;
+  background: rgb(102, 51, 153);
+  box-sizing: border-box;
+  z-index: 10;
+  padding: 2rem;
+  word-wrap: break-word;
+  color: aliceblue;
+  font-size: 1.1rem;
+  border-radius: 2rem;
+}
+.modal-container > button {
+  float: right;
+  border: none;
+  background: none;
+  color: aliceblue;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-container > button:hover {
+  border-bottom: 1px solid white;
+}
