@@ -4,14 +4,15 @@ const sequelize = new Sequelize("testdb", "myuser", "password", {
   host: "localhost",
   dialect: "postgres",
 });
-sequelize.sync();
+
+sequelize.sync({ alter: true });
 
 (async () => {
   try {
-    await sequelize.authenticate();
-    console.log("connection established with db");
-  } catch (error) {
-    console.error("unable to connect to db");
+    sequelize.authenticate();
+    console.log("connection established with DB");
+  } catch (err) {
+    console.log("Unable to connect to db", err);
   }
 })();
 

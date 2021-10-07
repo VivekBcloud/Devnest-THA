@@ -1,0 +1,16 @@
+.card {
+  width: 250px;
+  height: 340px;
+  /* border: 2px red solid; */
+  padding: 1rem;
+  color: rgb(255, 255, 255);
+  background: rgba(28, 127, 226, 0.774);
+  font-size: 1rem;
+  /* border: 1px solid white; */
+  border-radius: 1rem;
+}
+.card > img {
+  min-height: 50%;
+  border-radius: 1rem;
+  margin: 1rem 0;
+}
