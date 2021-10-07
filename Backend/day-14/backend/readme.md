@@ -4,6 +4,6 @@
 
 ```bash
 
-debug=day-14:* yarn start
+debug=backend:* yarn start
 
 ```
